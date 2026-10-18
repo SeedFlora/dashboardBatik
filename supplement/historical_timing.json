@@ -1,0 +1,72 @@
+{
+  "kind": "historical recorded measurements, not a new benchmark",
+  "recorded_at": "2026-10-02T22:37:20+07:00",
+  "source": "historical paper-figure facts, aggregate transcription; original timing script not recovered",
+  "original_protocol": {
+    "server": "streamlit run app.py on 127.0.0.1:8766, headless, fileWatcherType none; DB_PATH/DATA_DIR pointed at a scratch copy of the app DB (sqlite3 backup from an immutable read-only connection); dashboard inputs under exports/ read in place, read-only",
+    "browser": "Playwright 1.61.0 bundled Chromium 149.0.7827.55, headless; viewport 1440x900, device_scale_factor 1 for timing; service workers blocked; only 127.0.0.1/localhost requests allowed",
+    "url": "/ (default landing page = Dashboard BI, normal mode, not print mode)",
+    "cold_load_definition": "navigation start (performance.timeOrigin) to the first animation frame where the app script state is 'notRunning', the KPI row shows 5 metrics, >=3 visible Vega-Lite charts all contain svg.marks, the visible KPI sparkline is drawn and no spinner is visible",
+    "cold_load_runs": "one warm-up load (first page load after server start; fills the Streamlit data cache), then 5 loads, each in a fresh browser context (empty browser cache and new Streamlit session) in the same browser process",
+    "warm_rerun_definition": "in a further fresh context after load: programmatic click on the 'Airbnb' source pill (filter toggled on/off alternately, 5 changes); time from click to the end of the script run with every visible Vega-Lite chart redrawn (new svg element); change 1 was the first visit of the 'Airbnb only' filter state",
+    "measurement_conditions": "the development machine with other user applications running (IDE, messaging apps and an unrelated GPU model-evaluation process); system CPU load (Win32_Processor.LoadPercentage) sampled 40-62% just before the timing run; not an isolated benchmark machine"
+  },
+  "conditions": {
+    "browser_viewport": [
+      1440,
+      900
+    ],
+    "device_scale_factor": 1,
+    "server_cache": "filled by the first-after-server-start navigation; warm during all five fresh-browser-context observations",
+    "machine": "shared development laptop; background applications running"
+  },
+  "first_after_server_start": {
+    "n": 1,
+    "seconds": 3.04
+  },
+  "fresh_browser_sessions_warm_server_cache": {
+    "median": 1.219,
+    "min": 1.194,
+    "max": 1.293,
+    "runs": [
+      1.293,
+      1.219,
+      1.197,
+      1.222,
+      1.194
+    ],
+    "n": 5
+  },
+  "filter_reruns_warm_server_cache": {
+    "median": 0.563,
+    "min": 0.532,
+    "max": 0.748,
+    "runs": [
+      0.748,
+      0.586,
+      0.563,
+      0.539,
+      0.532
+    ],
+    "n": 5,
+    "script_end_s_runs": [
+      0.747,
+      0.585,
+      0.563,
+      0.539,
+      0.532
+    ],
+    "click_to_script_start_ms_runs": [
+      43.9,
+      75.4,
+      38.3,
+      38.2,
+      65.6
+    ],
+    "filter_states_shown": [
+      "Menampilkan 1.504 dari 1.687 ulasan pelanggan · 1.504 teks berlabel · 1.495 berlabel aspek",
+      "Menampilkan 1.687 dari 1.687 ulasan pelanggan · 1.605 teks berlabel · 1.515 berlabel aspek"
+    ]
+  },
+  "caveat": "The historical cold_load label referred to empty browser cache/new session, not a cold server data cache. These measurements apply to the historical app and real corpus; synthetic reconstruction timings are separate."
+}

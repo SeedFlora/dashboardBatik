@@ -1,0 +1,91 @@
+{
+  "validated_at": "2026-10-17T00:10:28.049494+07:00",
+  "scope": "Local reproducibility supplement with software and synthetic fixtures; no public release asserted.",
+  "standalone_tests": {
+    "definitive_final_combined_run": {
+      "passed": 82,
+      "failed": 0,
+      "skipped": 0,
+      "deselected": 2,
+      "console_duration_s": 26.96,
+      "artifact": "results/final-synthetic-tests.xml"
+    },
+    "selected_function_count": 82,
+    "total_function_count": 84,
+    "exclusions": [
+      "tests/test_bi_data.py::test_aspect_names_match_business_dashboard",
+      "tests/test_bi_dashboard.py::test_lead_page_dispatch_through_ui_main"
+    ],
+    "preceding_runs": "synthetic-tests.xml (81 passed) and final-ui-tests.xml (27 passed) retained as preceding package runs; definitive final result is final-synthetic-tests.xml."
+  },
+  "repository_targeted_tests": {
+    "passed": 84,
+    "data_tests": 55,
+    "ui_tests": 29,
+    "data_duration_s": 7.81,
+    "ui_duration_s": 23.06,
+    "evidence_scope": "Coordinated repository verification reported by parent agent; broader full-project regression suite not rerun for this revision."
+  },
+  "historical_tests": {
+    "baseline_passed": 558,
+    "new_passed": 69,
+    "full_suite_passed": 627,
+    "skipped": 11,
+    "collected": 638,
+    "new_tests_included_in_full_suite": true,
+    "scope": "Historical recorded run, separate from current revision verification."
+  },
+  "timing_reconstruction_smoke": {
+    "status": "completed",
+    "fresh_session_runs": 2,
+    "filter_change_runs": 2,
+    "page_errors": 0,
+    "blocked_external_requests": 0,
+    "data": "synthetic fixture only",
+    "artifact": "results/timing-synthetic.json",
+    "historical_equivalence": false,
+    "scope": "Retained earlier package-source functional smoke; not a final real-corpus performance benchmark."
+  },
+  "final_modules_match_repository": {
+    "bi_data.py": true,
+    "bi_nlp.py": true,
+    "bi_charts.py": true,
+    "bi_dashboard.py": true
+  },
+  "diagnostics_anonymization": "Machine hostname and absolute local filesystem locations redacted; deliberate fabricated C:/SECRET paths in synthetic fixture retained.",
+  "sha256_manifest_excludes": "This validation.json itself and transient __pycache__/.pyc files; only enumerated files are package payload.",
+  "sha256": {
+    "generate_schemas.py": "1e73e24be1434162ad041f0f9a9843f6d714ec821d1061d621cf4b5fa5090408",
+    "historical_timing.json": "8f1327458b30a2e6531b3e387f68285b29026694a08fc6e7d964e7072c5692af",
+    "launch_dashboard.py": "24d172f68660024cce4599cb0c4cce5a862a6fbd5515199d945e2648cf075323",
+    "LICENSE": "5c29069df57d679c61c5239738b791fdb007cdcadad7cbe0c7cf448441269749",
+    "README.txt": "165930b60f80802dd3b74d555800a08b187a5de1489dde3bdfee0a7d24740b0e",
+    "requirements.txt": "67e519b7b380cf3de9dda686704d8ddfcab7a647c9c27f57a05e64dfc3def99d",
+    "results/final-synthetic-tests.xml": "02ae3d1d770d136f6f7e998f25c662d38b859501c781f31dae680018b30a6029",
+    "results/final-ui-tests.xml": "bfc33c9f5045c447501540a3c9c1779bf0e1c017ef73d55ccee4f417cfe7db80",
+    "results/synthetic-tests.xml": "0ca9dc25880191f3440912aadbc08e502ab84b6c67a12da3f2bcfbc7c0e23839",
+    "results/timing-synthetic.json": "fadbd6a9af6ac98a2dd3c70b06e11886f6ffdcea0e9658d326f3a8808e63bfc0",
+    "results/verification.json": "2b6d5c0ef6573d900fdd1295ebe3b1946d0a338a29381fb7523e19e4179b8e28",
+    "review_revision_analysis.json": "f18183148b5f2f37475c66bb882dd8f2cc2cf4ef29c7792941248170eb066c66",
+    "review_revision_analysis.py": "4af09985593c11a87bf9c0abc181678603ba464804b1525737574642186885ec",
+    "rules.txt": "4814f7b22b09b6de139a5d1ae2e22f19581d0f36f740920c7c492b3e3751168c",
+    "run_tests.py": "2b9b5cf715c3b2171922af6ba3c21d81d355e9a7da3d9c9db9b8cac1c42e5741",
+    "schemas.json": "d71d50d8870d5efb19856acf8604222ad235c8c92eb41dcf3f9bf8ed3230838a",
+    "temajelajah/__init__.py": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+    "temajelajah/bi_charts.py": "341c0d78335781356614840b87dec226f9b2f0aee928554aee965c04c60e025a",
+    "temajelajah/bi_dashboard.py": "a534fa045dde7b346e0541b98f289029c53f12f456ec7f01faddcd9ac21954af",
+    "temajelajah/bi_data.py": "053cd43a50e08c7ffa5c7da9b4300b6271d68b57db3096e540b16b6005c7da31",
+    "temajelajah/bi_nlp.py": "abec7ef84dc404fef5939eb8d8a3e2e8a95c4ebd71af189b83b1e4b26c1ad444",
+    "test_inventory.json": "475aea88bf8541419755eef95590e27f524a2d697f57a4dda92ff1e02c4cc83b",
+    "test_inventory.py": "034bc66e72f0053d2963f19fb6718541dc170ae76be93cf8d9f6b73c64d43513",
+    "tests/bi_fixture.py": "cd05a32f62c6710d3b68df85dbf12622dfe99b39c3dbf2f9dbeb03eeeaba01df",
+    "tests/test_bi_dashboard.py": "d91463c33c4313602211333e732351f51ce9a9e47cdb0feeebbef7f7fcbd09ad",
+    "tests/test_bi_data.py": "0e1cf38ab6e1760f81cd59cdfae824d697f45c3b4f74e7fab64d259755557a69",
+    "timing.py": "c8b74bd1607c45d591bb635e774247dfb8c186f9ca86b7db737dbeb223613be2"
+  },
+  "final_tests_match_repository": {
+    "bi_fixture.py": true,
+    "test_bi_data.py": true,
+    "test_bi_dashboard.py": true
+  }
+}

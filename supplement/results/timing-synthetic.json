@@ -1,0 +1,58 @@
+{
+  "kind": "newly measured reconstruction; not the original historical script",
+  "data": "synthetic fixture",
+  "historical_equivalence": false,
+  "protocol": {
+    "server": "new dedicated loopback Streamlit process; minimal supplement launcher",
+    "fresh_sessions": "first measured navigation after server readiness; then fresh contexts with warm server data cache",
+    "filter_changes": "further fresh context, alternating one source pill on/off",
+    "completion": "first animation frame after script notRunning, metric/chart counts reached, all visible chart SVG marks drawn and no spinner",
+    "minimum_chart_count": 2,
+    "expected_metric_count": 5,
+    "require_kpi_sparkline": false,
+    "historical_differences": [
+      "Minimal launcher instead of complete original app shell.",
+      "Default synthetic fixture is smaller than the real collection.",
+      "Default chart minimum is 2; original recorded criterion was 3.",
+      "KPI sparkline is optional unless --require-sparkline is provided."
+    ]
+  },
+  "environment": {
+    "python": "3.13.5",
+    "system": "Windows",
+    "packages": {
+      "streamlit": "1.64.0",
+      "pandas": "3.0.6",
+      "numpy": "2.5.3",
+      "playwright": "1.61.0"
+    },
+    "browser": "149.0.7827.55"
+  },
+  "first_after_server_start_s": {
+    "n": 1,
+    "value": 1.6727999999988825
+  },
+  "fresh_browser_sessions_warm_server_cache": {
+    "n": 2,
+    "runs_s": [
+      1.0815999999996275,
+      1.0837000000011177
+    ],
+    "median_s": 1.0826500000003727,
+    "min_s": 1.0815999999996275,
+    "max_s": 1.0837000000011177
+  },
+  "filter_reruns": {
+    "n": 2,
+    "runs_s": [
+      0.4908000000007451,
+      0.4247999999988824
+    ],
+    "median_s": 0.45779999999981374,
+    "min_s": 0.4247999999988824,
+    "max_s": 0.4908000000007451
+  },
+  "status": "completed",
+  "blocked_external_requests": [],
+  "page_errors": []
+}

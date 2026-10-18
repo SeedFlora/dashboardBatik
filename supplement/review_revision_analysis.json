@@ -1,0 +1,475 @@
+{
+  "purpose": "Revision analysis; observed results and synthetic adversarial examples are separate.",
+  "snapshot_collection_timestamp": "2026-10-01 16:58:00.668624+00:00",
+  "trend": {
+    "heuristic": {
+      "current_start": "2025-09-01",
+      "current_end_month": "2026-08-01",
+      "previous_start": "2024-09-01",
+      "previous_end_month": "2025-08-01",
+      "current_count": 112,
+      "previous_count": 162,
+      "relative_change": -0.308641975308642
+    },
+    "calendar_complete": {
+      "current_start": "2025-10-01",
+      "current_end_month": "2026-09-01",
+      "previous_start": "2024-10-01",
+      "previous_end_month": "2025-09-01",
+      "current_count": 101,
+      "previous_count": 156,
+      "relative_change": -0.35256410256410253
+    },
+    "flagged_final_month": "2026-09-01",
+    "final_month_count": 1,
+    "preceding_12_month_median": 8.0,
+    "low_month_threshold": 4.0,
+    "dated_customer_records": 1520,
+    "undated_customer_records": 167,
+    "interpretation": "Low activity alone cannot establish incomplete collection. Both comparisons describe observed review volume, not demand/bookings/performance."
+  },
+  "synthetic_adversarial_examples": {
+    "stable_activity": {
+      "monthly_counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "flagged_month": null,
+      "current_count": 120,
+      "previous_count": 120,
+      "relative_change": 0.0,
+      "interpretation": "Stable complete activity should not flag a month."
+    },
+    "genuine_seasonal_dip": {
+      "monthly_counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        2,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        2
+      ],
+      "flagged_month": "2026-09-01",
+      "current_count": 112,
+      "previous_count": 110,
+      "relative_change": 0.018181818181818077,
+      "interpretation": "A fully observed recurring seasonal dip is still flagged; lower activity is not evidence of missingness."
+    },
+    "genuine_recent_decline": {
+      "monthly_counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        4,
+        2
+      ],
+      "flagged_month": "2026-09-01",
+      "current_count": 114,
+      "previous_count": 110,
+      "relative_change": 0.036363636363636376,
+      "interpretation": "A fully observed recent decline is still flagged."
+    },
+    "incomplete_collection_identical_counts": {
+      "monthly_counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        2
+      ],
+      "flagged_month": "2026-09-01",
+      "current_count": 120,
+      "previous_count": 110,
+      "relative_change": 0.09090909090909083,
+      "interpretation": "The heuristic cannot distinguish these counts from a genuine final-month decline."
+    },
+    "genuine_zero_activity": {
+      "monthly_counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        0
+      ],
+      "flagged_month": "2026-09-01",
+      "current_count": 120,
+      "previous_count": 110,
+      "relative_change": 0.09090909090909083,
+      "interpretation": "A fully observed zero-activity month is flagged even though the denominator of collection completeness is unknown."
+    }
+  },
+  "historical_test_relationship": {
+    "source": "outputs/paper_figures/facts.json",
+    "recorded_at": "2026-10-02T22:37:20+07:00",
+    "baseline": {
+      "passed": 558,
+      "skipped": 11,
+      "failed": 0
+    },
+    "new_tests": {
+      "tests/test_bi_data.py (unit, pure functions)": 47,
+      "tests/test_bi_dashboard.py (19 AppTest page runs + 3 import, encoding and chart-state checks)": 22,
+      "total": 69
+    },
+    "full_suite": {
+      "passed": 627,
+      "skipped": 11,
+      "failed": 0,
+      "duration_s (pytest)": 137.95,
+      "command": "python -m pytest -q -p no:cacheprovider",
+      "skip_reason": "torch not installed (11 skips, same as baseline)"
+    },
+    "collected_total": 638,
+    "new_tests_included_in_full_suite": true,
+    "caveat": "Historical recorded results; this read-only analysis does not rerun or establish current suite status."
+  },
+  "annotation_batch_provenance": {
+    "collector_a_0001_0800.jsonl": {
+      "records": 800,
+      "index_min": 1,
+      "index_max": 800,
+      "venue_counts": {
+        "batik_kotagede_nunung": 146,
+        "batik_popiler_2": 225,
+        "five_art_studio": 429
+      },
+      "metadata": {
+        "annotation_method": {
+          "\"assistant_manual_provisional\"": 800
+        },
+        "annotator_requested_alias": {
+          "\"GPT Sol\"": 800
+        },
+        "backend_model_id": {
+          "null": 800
+        },
+        "expert_approved": {
+          "false": 800
+        },
+        "rating_used_for_annotation": {
+          "false": 800
+        }
+      },
+      "missing_dedicated_fields": [
+        "annotation_session",
+        "session_id",
+        "prompt_version",
+        "rubric_version",
+        "annotation_date",
+        "annotated_at"
+      ]
+    },
+    "root_0801_1524.jsonl": {
+      "records": 340,
+      "index_min": 801,
+      "index_max": 1140,
+      "venue_counts": {
+        "five_art_studio": 340
+      },
+      "metadata": {
+        "annotation_method": {
+          "\"assistant_manual_provisional\"": 340
+        },
+        "annotator_requested_alias": {
+          "\"GPT Sol\"": 340
+        },
+        "backend_model_id": {
+          "null": 340
+        },
+        "expert_approved": {
+          "false": 340
+        },
+        "rating_used_for_annotation": {
+          "false": 340
+        }
+      },
+      "missing_dedicated_fields": [
+        "annotation_session",
+        "session_id",
+        "prompt_version",
+        "rubric_version",
+        "annotation_date",
+        "annotated_at"
+      ]
+    },
+    "ml_1141_1252.jsonl": {
+      "records": 112,
+      "index_min": 1141,
+      "index_max": 1252,
+      "venue_counts": {
+        "five_art_studio": 97,
+        "lombok_batik_alwan": 15
+      },
+      "metadata": {
+        "annotation_method": {
+          "\"assistant_manual_provisional\"": 112
+        },
+        "annotator_requested_alias": {
+          "\"GPT Sol\"": 112
+        },
+        "backend_model_id": {
+          "null": 112
+        },
+        "expert_approved": {
+          "false": 112
+        },
+        "rating_used_for_annotation": {
+          "false": 112
+        }
+      },
+      "missing_dedicated_fields": [
+        "annotation_session",
+        "session_id",
+        "prompt_version",
+        "rubric_version",
+        "annotation_date",
+        "annotated_at"
+      ]
+    },
+    "ui_1253_1524.jsonl": {
+      "records": 272,
+      "index_min": 1253,
+      "index_max": 1524,
+      "venue_counts": {
+        "widya_batik_class": 272
+      },
+      "metadata": {
+        "annotation_method": {
+          "\"assistant_manual_provisional\"": 272
+        },
+        "annotator_requested_alias": {
+          "\"GPT Sol\"": 272
+        },
+        "backend_model_id": {
+          "null": 272
+        },
+        "expert_approved": {
+          "false": 272
+        },
+        "rating_used_for_annotation": {
+          "false": 272
+        }
+      },
+      "missing_dedicated_fields": [
+        "annotation_session",
+        "session_id",
+        "prompt_version",
+        "rubric_version",
+        "annotation_date",
+        "annotated_at"
+      ]
+    }
+  },
+  "annotation_metadata_caveat": "Batch filename provides a reconstructed batch/session proxy, not a recorded session identity. File modification timestamps and collection timestamps must not be relabeled annotation dates. Requested assistant alias does not identify the backend model. Prompt/rubric version, annotation date, and backend model are unknown when no separate evidence exists.",
+  "sentiment_real_csv": {
+    "rows": 1524,
+    "metadata": {
+      "annotation_method": {
+        "assistant_manual_provisional": 1524
+      },
+      "annotator_requested_alias": {
+        "GPT Sol": 1524
+      },
+      "backend_model_id": {
+        "null": 1524
+      },
+      "expert_approved": {
+        "false": 1524
+      },
+      "rating_used_for_annotation": {
+        "false": 1524
+      }
+    },
+    "component_filenames": {},
+    "missing_dedicated_fields": [
+      "annotation_session",
+      "session_id",
+      "prompt_version",
+      "rubric_version",
+      "annotation_date",
+      "annotated_at"
+    ]
+  },
+  "sentiment_legacy_csv": {
+    "rows": 81,
+    "metadata": {
+      "annotation_method": {
+        "assistant_manual_provisional": 81
+      },
+      "annotator_requested_alias": {
+        "GPT Sol": 81
+      },
+      "backend_model_id": {
+        "null": 81
+      },
+      "expert_approved": {
+        "false": 81
+      },
+      "rating_used_for_annotation": {
+        "false": 81
+      }
+    },
+    "component_filenames": {},
+    "missing_dedicated_fields": [
+      "annotation_session",
+      "session_id",
+      "prompt_version",
+      "rubric_version",
+      "annotation_date",
+      "annotated_at"
+    ]
+  },
+  "aspect_csv": {
+    "rows": 1515,
+    "metadata": {
+      "annotation_method": {
+        "assistant_manual_provisional": 1515
+      },
+      "annotator_requested_alias": {
+        "GPT Sol": 1515
+      },
+      "backend_model_id": {
+        "null": 1515
+      },
+      "expert_approved": {
+        "false": 1515
+      },
+      "rating_used_for_annotation": {
+        "false": 1515
+      }
+    },
+    "component_filenames": {
+      "storage_0001_0200_v2.jsonl": 200,
+      "network_0201_0400.jsonl": 200,
+      "ui_0401_0600.jsonl": 200,
+      "root_0601_1050.jsonl": 450,
+      "ui_1051_1515.jsonl": 465
+    },
+    "missing_dedicated_fields": [
+      "annotation_session",
+      "session_id",
+      "prompt_version",
+      "rubric_version",
+      "annotation_date",
+      "annotated_at"
+    ],
+    "component_venue_counts": {
+      "network_0201_0400.jsonl": {
+        "batik_popiler_2": 168,
+        "five_art_studio": 32
+      },
+      "root_0601_1050.jsonl": {
+        "five_art_studio": 450
+      },
+      "storage_0001_0200_v2.jsonl": {
+        "batik_kotagede_nunung": 146,
+        "batik_popiler_2": 54
+      },
+      "ui_0401_0600.jsonl": {
+        "five_art_studio": 200
+      },
+      "ui_1051_1515.jsonl": {
+        "five_art_studio": 178,
+        "lombok_batik_alwan": 15,
+        "widya_batik_class": 272
+      }
+    }
+  }
+}

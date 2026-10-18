@@ -1,0 +1,85 @@
+IMPLEMENTED RULES AND THEIR INTERPRETATION
+
+1. Input boundary and audit
+CSV columns are read through explicit allowlists; raw_text, platform/native IDs,
+source URLs and unrestricted error detail are excluded from dashboard frames.
+The snapshot run ID is validated and resolved within the configured runs folder.
+Funnel stages 1-4 are compared with four audit counts; a snapshot hash mismatch or
+missing expected snapshot must prevent an unqualified reconciled state.
+An absent expected snapshot hash is unknown, rather than an assumed successful
+hash match. Counts alone do not establish snapshot identity. SQLite
+telemetry is opened read-only and immutable, querying runs/checkpoints only.
+Agreement reconciles the observed export and audit; it does not establish all
+historical platform participation, correctness of platform totals or collection rights.
+
+2. Labels and provenance
+Sentiment classes are positive, neutral, mixed and negative (stored Indonesian
+labels: positif, netral, campuran, negatif). A complaint-bearing label is mixed or
+negative. All sentiment/polarity labels remain provisional unless their own
+verification evidence says otherwise. The reported one-author aspect-presence
+check does not validate sentiment or polarity and is not independent agreement.
+Missing recorded backend model, prompt/rubric version or annotation date is unknown.
+Source batch filenames may reconstruct a batch/session proxy; a file modification
+or collection timestamp is not an annotation date. The requested assistant alias
+does not identify the backend model. Cross-venue comparisons must be constrained
+by the source's session/protocol guard; unknown/mixed provenance is not silently
+treated as a homogeneous annotation condition. Filters and exports retain metadata.
+
+3. Coverage
+Coverage is computed per target against that target's platform-reported denominator.
+Airbnb written-review counts, SeekSophie booking-option review counts and Google
+Maps panel totals are different constructs and must not be pooled into one percent.
+Zero retrieval is an observed numerator. Missing/zero denominator is not 0% coverage.
+A positive known denominator permits collected/reported; a reported zero or absent
+denominator yields NA/unknown. Coverage ignores the year filter because these are
+collection-time totals; a missing target report must be disclosed.
+
+4. Review volume and sensitivity
+Only customer-text/rating-only rows with exact calendar months enter monthly trends.
+The collection month is excluded. The low-final-month heuristic flags the previous
+month if its count is below half the median of the preceding 12 months, requiring
+at least six prior month bins. It is a suspicion rule, not verified incompleteness.
+Its month is fixed on the unfiltered corpus so venue filters do not redefine time.
+Trailing 12-month periods are compared; the source requires 30 observations in
+each period and withholds a comparison when the year filter cuts a period.
+Calendar-complete and heuristic-excluded comparisons must both be inspectable.
+Seasonality, declining activity and missing collection can produce the same tail.
+Counts describe observed review volume, not demand, visits, bookings or performance.
+
+5. Shares and intervals
+Wilson intervals use a binomial model conditional on provisional binary labels.
+They do not cover selection bias, correlated reviews, translations or label error.
+Interval overlap/non-overlap is exploratory, without multiple-comparison correction,
+and must not be promoted to a causal or calibrated significance claim.
+Aspect cells expose counts/denominators, small-sample flags and missing polarity.
+A missing-polarity cell is not a zero-complaint cell. Quotation matching checks
+literal support in the associated text; it does not validate assigned polarity.
+
+6. Distinctive terms
+The English-only tokenizer counts each retained term at most once per review.
+For log odds, n_a and n_b are SUMS of document frequencies across the retained
+vocabulary, not numbers of reviews. The prior is proportional to pooled term mass
+(default alpha0=1000); the default retained pooled document frequency is at least 5.
+The weighted score ranks normalized term-incidence mass. It is not per-review
+occurrence odds, a calibrated test statistic or evidence of meaningful difference.
+Prior sensitivity is retained and the previous |z|=1.96 opacity test-like cutoff is
+removed. Sparse/empty comparison groups are withheld by the source's guards.
+
+7. Insight cards
+The source computes guarded, ordered rules: hidden critiques (at least 10 complaint
+labels); review-volume change (both windows valid); coverage gap (known per-target
+coverage below 0.5); aspect gap (at least 100 records in both eligible venues,
+compatible session provenance); venue outlier (at least 50 labels, lower interval
+bound above overall share, compatible session provenance). These guards are design
+rules, not validated decision thresholds. All triggered cards are displayed; cards
+withheld by a provenance guard should be disclosed. No claim of venue quality or
+managerial benefit follows from a rule firing. Current source code is authoritative
+if a rule is changed; regenerate schema/test inventory after source edits.
+
+8. Performance and evaluation boundary
+Historical first-after-server-start load: one cache-miss observation. Fresh-browser
+sessions were measured after the server data cache had been filled. Filter reruns
+used the warm server. Keep these conditions distinct. The reconstruction timing
+script records new timings and its own context; a synthetic run is not a 1,702-row
+performance replication. Synthetic tests and an author-led walkthrough establish
+behavior; a manager study and independent annotation audit remain future work.

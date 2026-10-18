@@ -1,0 +1,246 @@
+{
+  "description": "Documentation of dashboard input allowlists, optional provenance and telemetry. CSV files may contain other columns, but they are not loaded unless explicitly allowlisted.",
+  "csv_storage_type": "Input CSV values are initially strings; dates, numeric ratings and boolean fields are normalized by the data module.",
+  "csv_required_allowlists": {
+    "CORPUS_COLS": [
+      "record_id",
+      "venue_key",
+      "source",
+      "record_role",
+      "collected_at",
+      "review_date",
+      "relative_date",
+      "rating",
+      "source_locale",
+      "text_variant",
+      "completeness_status",
+      "main_domain_eligible",
+      "quality_flags",
+      "exact_text_duplicate_count",
+      "raw_text_sha256",
+      "clean_text_sha256",
+      "clean_text"
+    ],
+    "LABEL_COLS": [
+      "record_id",
+      "venue_key",
+      "source",
+      "rating",
+      "review_date",
+      "relative_date",
+      "source_locale",
+      "clean_text",
+      "sentiment_4class",
+      "confidence",
+      "actual_ml_split",
+      "excluded_reason",
+      "expert_approved"
+    ],
+    "BUSINESS_COLS": [
+      "record_id",
+      "venue_key",
+      "source",
+      "rating",
+      "review_date",
+      "relative_date",
+      "source_locale",
+      "clean_text",
+      "presence_pengajar_layanan",
+      "presence_belajar_praktik",
+      "presence_hasil_karya_produk",
+      "presence_fasilitas_kenyamanan",
+      "polarity_pengajar_layanan",
+      "polarity_belajar_praktik",
+      "polarity_hasil_karya_produk",
+      "polarity_fasilitas_kenyamanan",
+      "aspect_decisions",
+      "needs_adjudication"
+    ]
+  },
+  "optional_annotation_columns": [
+    "annotation_method",
+    "backend_model_id",
+    "annotation_component_file",
+    "annotation_component_sha256",
+    "csv_source_jsonl",
+    "csv_source_jsonl_sha256",
+    "annotation_origin",
+    "annotation_source_sha256",
+    "annotation_session",
+    "annotation_rubric",
+    "annotation_prompt",
+    "annotation_date",
+    "expert_approved"
+  ],
+  "normalized_provenance_columns": [
+    "annotation_session",
+    "annotation_rubric",
+    "annotation_prompt",
+    "annotation_date",
+    "annotation_model",
+    "annotation_verification",
+    "presence_verification",
+    "polarity_verification",
+    "annotation_method",
+    "annotation_source_sha256",
+    "annotation_schema",
+    "annotation_protocol_sha256"
+  ],
+  "forbidden_dashboard_columns": [
+    "detail",
+    "raw_text",
+    "review_id",
+    "review_text",
+    "review_url",
+    "source_review_id",
+    "source_url",
+    "venue_url"
+  ],
+  "enums": {
+    "customer_record_roles": [
+      "customer_text",
+      "rating_only"
+    ],
+    "sentiment_and_polarity": [
+      "positif",
+      "netral",
+      "campuran",
+      "negatif"
+    ],
+    "complaint_labels": [
+      "campuran",
+      "negatif"
+    ],
+    "aspect_codes": [
+      "pengajar_layanan",
+      "belajar_praktik",
+      "hasil_karya_produk",
+      "fasilitas_kenyamanan"
+    ],
+    "sources": [
+      "Airbnb",
+      "Google Maps",
+      "SeekSophie"
+    ],
+    "unknown_provenance": "unknown"
+  },
+  "input_tree": {
+    "exports/paper_expansion/latest.json": {
+      "run_id": "validated relative child of runs/"
+    },
+    "exports/paper_expansion/runs/<run_id>/corpus.csv": "CORPUS_COLS",
+    "exports/paper_expansion/runs/<run_id>/audit.json": {
+      "run_id": "string",
+      "created_at": "ISO timestamp",
+      "snapshot": {
+        "sha256": "SHA-256 hex digest"
+      },
+      "counts": {
+        "stored_unique_source_identities": "nonnegative integer",
+        "customer_text": "nonnegative integer",
+        "main_domain_customer_texts": "nonnegative integer",
+        "paper_core_observed_complete_texts": "nonnegative integer"
+      },
+      "collector_targets": [
+        {
+          "target_key": "venue key",
+          "reported_total": "number or null",
+          "inserted_total": "number",
+          "updated_total": "number",
+          "duplicates_total": "number"
+        }
+      ],
+      "latest_collector_runs": {
+        "<venue_key>": {
+          "status": "string",
+          "reason": "stop-reason code",
+          "metrics": "allowlisted numeric metrics"
+        }
+      }
+    },
+    "exports/paper_expansion/runs/<run_id>/raw_snapshot.sqlite3": "Only runs/checkpoints metadata tables are queried; reviews table is not queried.",
+    "exports/paper_expansion/airbnb/*-report.json": {
+      "allowlisted_fields": [
+        "venue_key",
+        "started_at",
+        "finished_at",
+        "customer_texts",
+        "stop_reason"
+      ],
+      "source_totals_metadata": {
+        "writtenReviewCount": "number or numeric string; per-listing denominator"
+      }
+    },
+    "exports/paper_expansion/seeksophie_initial/collection_report.json": {
+      "allowlisted_fields": [
+        "venue_key",
+        "collected_at",
+        "actual_unique_reviews_collected",
+        "option_reviews_total_metadata_only",
+        "stop_reason",
+        "duplicate_objects"
+      ]
+    },
+    "exports/ml_experiments/dataset/real_labeled1524.csv": "LABEL_COLS plus optional annotation metadata",
+    "exports/ml_experiments/dataset/legacy_supplement81.csv": "LABEL_COLS plus optional annotation metadata; separate legacy cohort",
+    "exports/business_research/dataset/business_real.csv": "BUSINESS_COLS plus optional annotation metadata"
+  },
+  "aspect_decisions_json": {
+    "<aspect_code>": {
+      "present": "boolean",
+      "polarity": "sentiment enum or null",
+      "evidence_sentence_ids": [
+        "optional source-local sentence reference"
+      ],
+      "evidence_quotes": [
+        "literal text substring; correctness of polarity is not established"
+      ]
+    }
+  },
+  "sqlite_telemetry_tables": {
+    "runs": [
+      "run_id",
+      "target_key",
+      "status",
+      "reason",
+      "round_number",
+      "started_at",
+      "finished_at",
+      "metrics"
+    ],
+    "checkpoints": [
+      "run_id",
+      "round_number",
+      "metrics"
+    ],
+    "metrics_numeric_allowlist": [
+      "rounds",
+      "observed_unique",
+      "inserted",
+      "updated",
+      "duplicates",
+      "invalid",
+      "missing_ids",
+      "elapsed_seconds"
+    ]
+  },
+  "generated_telemetry_columns": [
+    "platform",
+    "target",
+    "venue_key",
+    "mulai",
+    "durasi",
+    "putaran",
+    "baru",
+    "duplikat",
+    "hasil",
+    "alasan"
+  ],
+  "missingness": {
+    "unknown_model_prompt_rubric_date": "unknown; never derived from filesystem modification times",
+    "missing_expected_snapshot_hash": "unknown snapshot identity; count agreement does not imply a hash match",
+    "zero_retrieval": "observed numerator, not a missing denominator",
+    "coverage_unknown_or_zero_denominator": "NA; no pooled denominator across platforms",
+    "aspect_missing_polarity": "missing/NA; not a zero complaint"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "definitive final package verification; synthetic inputs only",
+  "final_test_command": "python run_tests.py --junitxml=results/final-synthetic-tests.xml",
+  "final_test_result": {
+    "passed": 82,
+    "failed": 0,
+    "skipped": 0,
+    "deselected": 2,
+    "console_duration_s": 26.96,
+    "artifact": "results/final-synthetic-tests.xml"
+  },
+  "test_scope": "Four final BI modules, synthetic fixture, pure data/chart and Streamlit AppTest tests. Two full-application integration tests explicitly deselected. Includes missing-expected-snapshot-hash guard (unknown rather than matched).",
+  "preceding_package_runs": {
+    "initial_combined": {
+      "passed": 81,
+      "failed": 0,
+      "skipped": 0,
+      "deselected": 2,
+      "console_duration_s": 28.77
+    },
+    "ui_before_final_audit": {
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "deselected": 1,
+      "console_duration_s": 20.98,
+      "artifact": "results/final-ui-tests.xml",
+      "reason": "Rechecked after final print-only layout and coverage-status text changes; data modules unchanged."
+    },
+    "scope": "Retained earlier package-verification runs; superseded by final-synthetic-tests.xml."
+  },
+  "timing_reconstruction_smoke": {
+    "command": "python timing.py --output results/timing-synthetic.json --runs 2 --port 18766 --timeout-s 45",
+    "result": "completed; no page errors or blocked external requests; two fresh-browser observations and two filter changes after a single first-after-server-start observation",
+    "scope": "Earlier package-source functional smoke; not a final real-corpus performance benchmark.",
+    "limitations": "Synthetic functional smoke, not a real-corpus performance benchmark. A routine Windows server callback appeared during browser-context closure; the irrelevant server log is not distributed. No browser page errors occurred."
+  },
+  "anonymization": "Machine hostname and local filesystem paths redacted from bundled execution diagnostics; planted synthetic secret paths remain in the fixture intentionally."
+}

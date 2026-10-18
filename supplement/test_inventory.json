@@ -1,0 +1,610 @@
+{
+  "kind": "static inventory; not execution results",
+  "files": [
+    {
+      "file": "tests/test_bi_dashboard.py",
+      "test_functions": [
+        {
+          "name": "test_renders_fixture_kpis_charts_badges_tabs",
+          "line": 51,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_missing_corpus_waits_without_metrics",
+          "line": 68,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_empty_filter_slice_warns_without_metrics",
+          "line": 81,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_missing_labels_aspects_and_audit_degrade_to_info",
+          "line": 99,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_lead_page_dispatch_through_ui_main",
+          "line": 118,
+          "selected": false,
+          "exclusion_reason": "Requires the full application's navigation/services.",
+          "parametrized": false
+        },
+        {
+          "name": "test_bi_modules_do_not_import_sklearn",
+          "line": 135,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_bi_sources_utf8_without_mojibake",
+          "line": 143,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_reset_rebuilds_filter_widgets_under_fresh_keys",
+          "line": 152,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_planted_names_never_reach_the_page",
+          "line": 166,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_audit_mismatches_turn_the_badge_orange_and_are_listed",
+          "line": 179,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_odd_audit_and_run_rows_degrade_without_errors",
+          "line": 201,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_matching_audit_counts_without_reference_hash_remain_unverified",
+          "line": 216,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_narrowed_years_say_undated_reviews_are_included",
+          "line": 230,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_k1_trend_window_follows_the_corpus_calendar_and_the_year_filter",
+          "line": 263,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_quotes_follow_the_source_and_year_filters",
+          "line": 287,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_a_clicked_heatmap_cell_picks_the_quotes",
+          "line": 299,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_term_and_cell_clicks_are_read_from_the_chart_state",
+          "line": 308,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_read_errors_show_an_error_without_metrics",
+          "line": 321,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_print_mode_enlarges_chart_text_and_hides_table_toggles",
+          "line": 338,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_kwic_caption_escapes_the_query",
+          "line": 349,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_identity_card_follows_the_run_on_screen",
+          "line": 356,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_one_missing_airbnb_report_is_named_in_the_per_target_summary",
+          "line": 372,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_pooled_cards_name_the_older_museum_labels",
+          "line": 384,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_annotation_filters_export_recorded_fields_and_preserve_unknowns",
+          "line": 405,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_all_triggered_insights_remain_visible",
+          "line": 432,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_mixed_sessions_split_venue_comparisons_and_never_draw_a_pooled_reference",
+          "line": 442,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_coverage_never_pools_percentages_and_names_unknown_denominators",
+          "line": 458,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_method_separates_display_masking_from_raw_capture_governance",
+          "line": 468,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_trend_exposes_calendar_and_heuristic_sensitivity_with_counts",
+          "line": 478,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        }
+      ]
+    },
+    {
+      "file": "tests/test_bi_data.py",
+      "test_functions": [
+        {
+          "name": "test_parse_month_iso_month_year_relative",
+          "line": 29,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_rating_and_bool_normalisation",
+          "line": 40,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_wilson_reference_values",
+          "line": 51,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_bundle_has_no_identity_columns_or_secrets",
+          "line": 57,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_source_paths_validate_run_id_and_need_corpus",
+          "line": 69,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_apply_filters_each_dimension_and_undated_toggle",
+          "line": 84,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_kpis_exclude_owner_replies_and_count_hidden_critique",
+          "line": 97,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_monthly_series_flags_partial_tail_and_windows",
+          "line": 117,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_rating_text_matrix_row_shares_and_hidden_cells",
+          "line": 135,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_aspect_matrix_rates_small_n_and_quotes_complaints_first_masked",
+          "line": 155,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_explode_evidence_drops_and_counts_missing_quotes",
+          "line": 180,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_funnel_monotone_and_reconcile_reports_mismatch",
+          "line": 187,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_coverage_unknown_denominator_nan_and_status_gagal",
+          "line": 199,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_quality_matrix_fixture_counts",
+          "line": 216,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_insights_guards_and_cautious_wording",
+          "line": 227,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_selected_values_dict_and_attr_states",
+          "line": 242,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_proper_noun_vocab_and_masking_whole_words",
+          "line": 252,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_log_odds_symmetric_zero_exclusive_positive",
+          "line": 264,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_distinctive_terms_modes_and_skip_small_venues",
+          "line": 272,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_kwic_regex_escape_and_clipping",
+          "line": 290,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_length_bins_sum_to_n",
+          "line": 304,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_collector_snapshot_immutable_no_sidecars",
+          "line": 312,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_fmt_indonesian",
+          "line": 325,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_specs_json_serialisable_and_palette_only",
+          "line": 333,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_aspect_names_match_business_dashboard",
+          "line": 365,
+          "selected": false,
+          "exclusion_reason": "Requires the separate full business-model dashboard.",
+          "parametrized": false
+        },
+        {
+          "name": "test_year_filter_that_cuts_a_window_withholds_the_comparison",
+          "line": 381,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_every_slice_shares_the_corpus_calendar_for_the_incomplete_month",
+          "line": 395,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_kpis_delta_tone_and_sparkline_from_valid_windows",
+          "line": 414,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_venue_outlier_insight_withholds_cross_cohort_rank",
+          "line": 424,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_word_count_counts_han_and_kana_by_characters",
+          "line": 430,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_shares_never_round_a_nonzero_count_to_zero",
+          "line": 439,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_kpis_withhold_coverage_when_a_platform_report_is_missing",
+          "line": 446,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_load_bundle_names_missing_sources_and_tolerates_odd_audits",
+          "line": 452,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_run_telemetry_and_ops_summary_values",
+          "line": 476,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_scroll_curves_label_runs_without_a_start_time",
+          "line": 500,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_name_masking_catches_rare_names_handles_honorifics_and_signoffs",
+          "line": 508,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_distinctive_terms_refuse_empty_comparison_groups",
+          "line": 536,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_kwic_matches_cjk_queries_inside_cjk_text",
+          "line": 548,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_kwic_matches_either_apostrophe_like_the_term_counts",
+          "line": 557,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_a_rare_name_written_once_in_lower_case_stays_masked",
+          "line": 568,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_names_in_cyrillic_and_before_very_are_masked",
+          "line": 580,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_per_venue_terms_name_venues_without_language_metadata",
+          "line": 588,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_pooled_shares_name_the_older_museum_labels",
+          "line": 595,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_coverage_card_and_run_table_share_one_status_rule",
+          "line": 606,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_report_gaps_name_a_single_missing_target",
+          "line": 621,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_identity_snapshots_end_at_the_run_on_screen",
+          "line": 635,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_chart_specs_change_with_their_rows_after_streamlit_moves_the_data",
+          "line": 658,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_annotation_provenance_keeps_unknowns_and_batch_source_separate",
+          "line": 676,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_snapshot_digest_mismatch_is_detected_even_with_valid_csv",
+          "line": 700,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_annotation_filters_roundtrip_and_empty_selection_do_not_invent_rows",
+          "line": 710,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_cross_batch_contrasts_are_withheld_and_within_batch_stays_descriptive",
+          "line": 724,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_sparse_aspect_cells_expose_mentions_missing_polarity_and_na",
+          "line": 751,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_log_odds_uses_document_frequency_mass_not_review_count_and_no_threshold",
+          "line": 770,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_coverage_zero_collected_is_different_from_unknown_observation",
+          "line": 787,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        },
+        {
+          "name": "test_funnel_excludes_explicit_rejection_and_legacy_from_new_training_scope",
+          "line": 799,
+          "selected": true,
+          "exclusion_reason": null,
+          "parametrized": false
+        }
+      ]
+    }
+  ],
+  "function_count": 84,
+  "selected_function_count": 82,
+  "notes": [
+    "Parametrization can produce multiple collected cases per function.",
+    "Historical 69 new tests are included in 627 passes (558 baseline + 69); 11 historical skips.",
+    "Current selected standalone results must be read from a new run, not inferred from this inventory."
+  ]
+}
